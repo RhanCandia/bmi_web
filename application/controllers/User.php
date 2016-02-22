@@ -128,4 +128,19 @@ class User extends CI_Controller {
 		echo json_encode($response);
 	}
 
+	public function fetch_intakes() {
+		$user   = $this->session->userdata('user');
+		$day = $this->input->get('day');
+		$response = array();
+		$temp = $this->user->get_intake($user[0]->id, $day);
+		if ($temp) {
+			$response['status'] = 200;
+			$response['intake'] = $temp[0];
+		} else {
+			$response['status'] = 400;
+			$response['intake'] = false;
+		}
+		echo json_encode($response);
+	}
+
 }

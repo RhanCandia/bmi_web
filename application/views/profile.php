@@ -341,6 +341,12 @@ $(document).ready(function(){
   if (ref == 'calculator') {
     $('#toggle-recall').trigger('click');
   }
+  update_recall();
+  update_day1();
+  update_day2();
+  update_day3();
+  update_day4();
+  update_day5();
 });
 
 $('#btn-save-recall').click(function(){
@@ -380,7 +386,6 @@ $('#btn-save-recall').click(function(){
     dataType: 'JSON',
     success: function(response){
       if (response.status == 200) {
-        console.log('UPDATES');
         $('#bfprotein_rc').val(response.intake.bfprotein);
         $('#bfcarbs_rc').val(response.intake.bfcarbs);
         $('#bffats_rc').val(response.intake.bffats);
@@ -395,6 +400,8 @@ $('#btn-save-recall').click(function(){
         $('#drcarbs_rc').val(response.intake.drcarbs);
         $('#drfats_rc').val(response.intake.drfats);
         $('#drcalories_rc').val(response.intake.drcalories);
+
+        total('rc');
       }
     }
   });
@@ -437,7 +444,6 @@ $('#btn-save-d1').click(function(){
     dataType: 'JSON',
     success: function(response){
       if (response.status == 200) {
-        console.log('UPDATES');
         $('#bfprotein_d1').val(response.intake.bfprotein);
         $('#bfcarbs_d1').val(response.intake.bfcarbs);
         $('#bffats_d1').val(response.intake.bffats);
@@ -452,6 +458,8 @@ $('#btn-save-d1').click(function(){
         $('#drcarbs_d1').val(response.intake.drcarbs);
         $('#drfats_d1').val(response.intake.drfats);
         $('#drcalories_d1').val(response.intake.drcalories);
+
+        total('d1');
       }
     }
   });
@@ -494,7 +502,6 @@ $('#btn-save-d2').click(function(){
     dataType: 'JSON',
     success: function(response){
       if (response.status == 200) {
-        console.log('UPDATES');
         $('#bfprotein_d2').val(response.intake.bfprotein);
         $('#bfcarbs_d2').val(response.intake.bfcarbs);
         $('#bffats_d2').val(response.intake.bffats);
@@ -509,6 +516,8 @@ $('#btn-save-d2').click(function(){
         $('#drcarbs_d2').val(response.intake.drcarbs);
         $('#drfats_d2').val(response.intake.drfats);
         $('#drcalories_d2').val(response.intake.drcalories);
+
+        total('d2');
       }
     }
   });
@@ -551,7 +560,6 @@ $('#btn-save-d3').click(function(){
     dataType: 'JSON',
     success: function(response){
       if (response.status == 200) {
-        console.log('UPDATES');
         $('#bfprotein_d3').val(response.intake.bfprotein);
         $('#bfcarbs_d3').val(response.intake.bfcarbs);
         $('#bffats_d3').val(response.intake.bffats);
@@ -566,6 +574,8 @@ $('#btn-save-d3').click(function(){
         $('#drcarbs_d3').val(response.intake.drcarbs);
         $('#drfats_d3').val(response.intake.drfats);
         $('#drcalories_d3').val(response.intake.drcalories);
+
+        total('d3');
       }
     }
   });
@@ -608,7 +618,6 @@ $('#btn-save-d4').click(function(){
     dataType: 'JSON',
     success: function(response){
       if (response.status == 200) {
-        console.log('UPDATES');
         $('#bfprotein_d4').val(response.intake.bfprotein);
         $('#bfcarbs_d4').val(response.intake.bfcarbs);
         $('#bffats_d4').val(response.intake.bffats);
@@ -623,6 +632,8 @@ $('#btn-save-d4').click(function(){
         $('#drcarbs_d4').val(response.intake.drcarbs);
         $('#drfats_d4').val(response.intake.drfats);
         $('#drcalories_d4').val(response.intake.drcalories);
+
+        total('d4');
       }
     }
   });
@@ -665,7 +676,6 @@ $('#btn-save-d5').click(function(){
     dataType: 'JSON',
     success: function(response){
       if (response.status == 200) {
-        console.log('UPDATES');
         $('#bfprotein_d5').val(response.intake.bfprotein);
         $('#bfcarbs_d5').val(response.intake.bfcarbs);
         $('#bffats_d5').val(response.intake.bffats);
@@ -680,9 +690,211 @@ $('#btn-save-d5').click(function(){
         $('#drcarbs_d5').val(response.intake.drcarbs);
         $('#drfats_d5').val(response.intake.drfats);
         $('#drcalories_d5').val(response.intake.drcalories);
+
+        total('d5');
       }
     }
   });
 });
+
+function update_recall() {
+  $.ajax({
+    url: '<?php echo base_url(); ?>user/fetch_intakes',
+    method: 'GET',
+    data: {"day": 0},
+    dataType: 'JSON',
+    success: function(response){
+      if (response.status == 200) {
+        $('#bfprotein_rc').val(response.intake.bfprotein);
+        $('#bfcarbs_rc').val(response.intake.bfcarbs);
+        $('#bffats_rc').val(response.intake.bffats);
+        $('#bfcalories_rc').val(response.intake.bfcalories);
+
+        $('#lhprotein_rc').val(response.intake.lhprotein);
+        $('#lhcarbs_rc').val(response.intake.lhcarbs);
+        $('#lhfats_rc').val(response.intake.lhfats);
+        $('#lhcalories_rc').val(response.intake.lhcalories);
+
+        $('#drprotein_rc').val(response.intake.drprotein);
+        $('#drcarbs_rc').val(response.intake.drcarbs);
+        $('#drfats_rc').val(response.intake.drfats);
+        $('#drcalories_rc').val(response.intake.drcalories);
+
+        total('rc');
+      }
+    }
+  });
+}
+
+function update_day1() {
+  $.ajax({
+    url: '<?php echo base_url(); ?>user/fetch_intakes',
+    method: 'GET',
+    data: {"day": 1},
+    dataType: 'JSON',
+    success: function(response){
+      if (response.status == 200) {
+        $('#bfprotein_d1').val(response.intake.bfprotein);
+        $('#bfcarbs_d1').val(response.intake.bfcarbs);
+        $('#bffats_d1').val(response.intake.bffats);
+        $('#bfcalories_d1').val(response.intake.bfcalories);
+
+        $('#lhprotein_d1').val(response.intake.lhprotein);
+        $('#lhcarbs_d1').val(response.intake.lhcarbs);
+        $('#lhfats_d1').val(response.intake.lhfats);
+        $('#lhcalories_d1').val(response.intake.lhcalories);
+
+        $('#drprotein_d1').val(response.intake.drprotein);
+        $('#drcarbs_d1').val(response.intake.drcarbs);
+        $('#drfats_d1').val(response.intake.drfats);
+        $('#drcalories_d1').val(response.intake.drcalories);
+
+        total('d1');
+      }
+    }
+  });
+}
+
+function update_day2() {
+  $.ajax({
+    url: '<?php echo base_url(); ?>user/fetch_intakes',
+    method: 'GET',
+    data: {"day": 2},
+    dataType: 'JSON',
+    success: function(response){
+      if (response.status == 200) {
+        $('#bfprotein_d2').val(response.intake.bfprotein);
+        $('#bfcarbs_d2').val(response.intake.bfcarbs);
+        $('#bffats_d2').val(response.intake.bffats);
+        $('#bfcalories_d2').val(response.intake.bfcalories);
+
+        $('#lhprotein_d2').val(response.intake.lhprotein);
+        $('#lhcarbs_d2').val(response.intake.lhcarbs);
+        $('#lhfats_d2').val(response.intake.lhfats);
+        $('#lhcalories_d2').val(response.intake.lhcalories);
+
+        $('#drprotein_d2').val(response.intake.drprotein);
+        $('#drcarbs_d2').val(response.intake.drcarbs);
+        $('#drfats_d2').val(response.intake.drfats);
+        $('#drcalories_d2').val(response.intake.drcalories);
+
+        total('d2');
+      }
+    }
+  });
+}
+
+function update_day3() {
+  $.ajax({
+    url: '<?php echo base_url(); ?>user/fetch_intakes',
+    method: 'GET',
+    data: {"day": 3},
+    dataType: 'JSON',
+    success: function(response){
+      if (response.status == 200) {
+        $('#bfprotein_d3').val(response.intake.bfprotein);
+        $('#bfcarbs_d3').val(response.intake.bfcarbs);
+        $('#bffats_d3').val(response.intake.bffats);
+        $('#bfcalories_d3').val(response.intake.bfcalories);
+
+        $('#lhprotein_d3').val(response.intake.lhprotein);
+        $('#lhcarbs_d3').val(response.intake.lhcarbs);
+        $('#lhfats_d3').val(response.intake.lhfats);
+        $('#lhcalories_d3').val(response.intake.lhcalories);
+
+        $('#drprotein_d3').val(response.intake.drprotein);
+        $('#drcarbs_d3').val(response.intake.drcarbs);
+        $('#drfats_d3').val(response.intake.drfats);
+        $('#drcalories_d3').val(response.intake.drcalories);
+
+        total('d3');
+      }
+    }
+  });
+}
+
+function update_day4() {
+  $.ajax({
+    url: '<?php echo base_url(); ?>user/fetch_intakes',
+    method: 'GET',
+    data: {"day": 4},
+    dataType: 'JSON',
+    success: function(response){
+      if (response.status == 200) {
+        $('#bfprotein_d4').val(response.intake.bfprotein);
+        $('#bfcarbs_d4').val(response.intake.bfcarbs);
+        $('#bffats_d4').val(response.intake.bffats);
+        $('#bfcalories_d4').val(response.intake.bfcalories);
+
+        $('#lhprotein_d4').val(response.intake.lhprotein);
+        $('#lhcarbs_d4').val(response.intake.lhcarbs);
+        $('#lhfats_d4').val(response.intake.lhfats);
+        $('#lhcalories_d4').val(response.intake.lhcalories);
+
+        $('#drprotein_d4').val(response.intake.drprotein);
+        $('#drcarbs_d4').val(response.intake.drcarbs);
+        $('#drfats_d4').val(response.intake.drfats);
+        $('#drcalories_d4').val(response.intake.drcalories);
+
+        total('d4');
+      }
+    }
+  });
+}
+
+function update_day5() {
+  $.ajax({
+    url: '<?php echo base_url(); ?>user/fetch_intakes',
+    method: 'GET',
+    data: {"day": 5},
+    dataType: 'JSON',
+    success: function(response){
+      if (response.status == 200) {
+        $('#bfprotein_d5').val(response.intake.bfprotein);
+        $('#bfcarbs_d5').val(response.intake.bfcarbs);
+        $('#bffats_d5').val(response.intake.bffats);
+        $('#bfcalories_d5').val(response.intake.bfcalories);
+
+        $('#lhprotein_d5').val(response.intake.lhprotein);
+        $('#lhcarbs_d5').val(response.intake.lhcarbs);
+        $('#lhfats_d5').val(response.intake.lhfats);
+        $('#lhcalories_d5').val(response.intake.lhcalories);
+
+        $('#drprotein_d5').val(response.intake.drprotein);
+        $('#drcarbs_d5').val(response.intake.drcarbs);
+        $('#drfats_d5').val(response.intake.drfats);
+        $('#drcalories_d5').val(response.intake.drcalories);
+
+        total('d5');
+      }
+    }
+  });
+}
+
+function total(day) {
+  $('#ttprotein_' + day).val(
+    parseFloat($('#bfprotein_' + day).val()) +
+    parseFloat($('#lhprotein_' + day).val()) +
+    parseFloat($('#drprotein_' + day).val())
+  );
+
+  $('#ttcarbs_' + day).val(
+    parseFloat($('#bfcarbs_' + day).val()) +
+    parseFloat($('#lhcarbs_' + day).val()) +
+    parseFloat($('#drcarbs_' + day).val())
+  );
+
+  $('#ttfats_' + day).val(
+    parseFloat($('#bffats_' + day).val()) +
+    parseFloat($('#lhfats_' + day).val()) +
+    parseFloat($('#drfats_' + day).val())
+  );
+
+  $('#ttcalories_' + day).val(
+    parseFloat($('#bfcalories_' + day).val()) +
+    parseFloat($('#lhcalories_' + day).val()) +
+    parseFloat($('#drcalories_' + day).val())
+  );
+}
 
 </script>
