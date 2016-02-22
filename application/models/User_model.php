@@ -46,6 +46,15 @@ class User_model extends CI_Model {
     return false;
   }
 
+  function get_records($user_id) {
+    $this->db->where('user_id', $user_id);
+    $result = $this->db->get('tbl_records');
+    if ($result->num_rows() > 0) {
+      return $result->result();
+    }
+    return false;
+  }
+
   function insert_intake($intake) {
     $this->db->trans_begin();
     $this->db->insert('tbl_intakes', $intake);

@@ -17,12 +17,57 @@
       <!-- Tab panes -->
       <div class="tab-content profile-tab-content">
         <div role="tabpanel" class="tab-pane active" id="personal">
-          PROFILE
+          <form class="form-horizontal" id="form-signup">
+            <div class="form-group">
+              <label for="fname" class="col-sm-3 col-md-3 control-label">First name</label>
+              <div class="col-sm-8 col-md-8">
+                <input type="text" class="form-control" name="fname" id="fname" placeholder="First name" value="<?php echo $personal_info->fname; ?>" readonly>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="lname" class="col-sm-3 col-md-3 control-label">Last name</label>
+              <div class="col-sm-8 col-md-8">
+                <input type="text" class="form-control" name="lname" id="lname" placeholder="Last name" value="<?php echo $personal_info->lname; ?>" readonly>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="level" class="col-sm-3 col-md-3 control-label">Year &amp; Section</label>
+              <div class="col-sm-8 col-md-8">
+                <input type="text" class="form-control" name="level" id="level" placeholder="Year &amp; Section" value="<?php echo $personal_info->level; ?>" readonly>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="gender" class="col-sm-3 col-md-3 control-label">Gender</label>
+              <div class="col-sm-8 col-md-8">
+                <input type="text" class="form-control" name="gender" id="gender" placeholder="Gender" value="<?php echo ($personal_info->gender == 0) ? 'Male' : 'Female'; ?>" readonly>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="bdate" class="col-sm-3 col-md-3 control-label">Birthdate</label>
+              <div class="col-sm-8 col-md-8">
+                <input type="date" class="form-control" name="bdate" id="bdate" placeholder="Birthdate" value="<?php echo date('Y-m-d', $personal_info->birthdate); ?>" readonly>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="email" class="col-sm-3 col-md-3 control-label">Email</label>
+              <div class="col-sm-8 col-md-8">
+                <input type="email" class="form-control" name="email" id="email" placeholder="Email" value="<?php echo $personal_info->email; ?>" readonly>
+              </div>
+            </div>
+            <!-- <div class="form-group">
+              <div class="col-sm-offset-3 col-sm-5 col-md-offset-3 col-md-8">
+                <button type="submit" class="btn btn-primary btn-lg col-sm-4 col-md-4 pull-right">UPDATE</button>
+              </div>
+            </div> -->
+          </form>
         </div>
         <div role="tabpanel" class="tab-pane" id="recall">
           <h2 style="text-align: center;">FOOD RECALL</h2>
           <p style="text-align: center;">
-            Recall your food intake yesterday. Use <a href="http://www.myfitnesspal.com/en/nutrition-facts-calories/filipino-food" target="_blank">this</a> (http://www.myfitnesspal.com/en/nutrition-facts-calories/filipino-food) as your reference.
+            Recall your food intake yesterday. Use <a href="http://www.myfitnesspal.com/en/nutrition-facts-calories/filipino-food" target="_blank">this</a> link as your reference.
+          </p>
+          <p style="text-align: center;">
+            Please check how much calorie you're supposed to take daily by going to <a href="http://www.calorieking.com/interactive-tools/how-many-calories-should-you-eat/?hf=5&hi=5&w=204&a=16&g=F&ref=home">this</a> link.
           </p>
           <br />
           <table class="table table-bordered dietary-table">
@@ -73,7 +118,10 @@
         <div role="tabpanel" class="tab-pane" id="day1">
           <h2 style="text-align: center;">DAY 1</h2>
           <p style="text-align: center;">
-            How much calorie did you take today? Use <a href="http://www.myfitnesspal.com/en/nutrition-facts-calories/filipino-food" target="_blank">this</a> (http://www.myfitnesspal.com/en/nutrition-facts-calories/filipino-food) as your reference.
+            Recall your food intake yesterday. Use <a href="http://www.myfitnesspal.com/en/nutrition-facts-calories/filipino-food" target="_blank">this</a> link as your reference.
+          </p>
+          <p style="text-align: center;">
+            Please check how much calorie you're supposed to take daily by going to <a href="http://www.calorieking.com/interactive-tools/how-many-calories-should-you-eat/?hf=5&hi=5&w=204&a=16&g=F&ref=home">this</a> link.
           </p>
           <br />
           <table class="table table-bordered dietary-table">
@@ -124,7 +172,10 @@
         <div role="tabpanel" class="tab-pane" id="day2">
           <h2 style="text-align: center;">DAY 2</h2>
           <p style="text-align: center;">
-            How much calorie did you take today? Use <a href="http://www.myfitnesspal.com/en/nutrition-facts-calories/filipino-food" target="_blank">this</a> (http://www.myfitnesspal.com/en/nutrition-facts-calories/filipino-food) as your reference.
+            Recall your food intake yesterday. Use <a href="http://www.myfitnesspal.com/en/nutrition-facts-calories/filipino-food" target="_blank">this</a> link as your reference.
+          </p>
+          <p style="text-align: center;">
+            Please check how much calorie you're supposed to take daily by going to <a href="http://www.calorieking.com/interactive-tools/how-many-calories-should-you-eat/?hf=5&hi=5&w=204&a=16&g=F&ref=home">this</a> link.
           </p>
           <br />
           <table class="table table-bordered dietary-table">
@@ -175,7 +226,10 @@
         <div role="tabpanel" class="tab-pane" id="day3">
           <h2 style="text-align: center;">DAY 3</h2>
           <p style="text-align: center;">
-            How much calorie did you take today? Use <a href="http://www.myfitnesspal.com/en/nutrition-facts-calories/filipino-food" target="_blank">this</a> (http://www.myfitnesspal.com/en/nutrition-facts-calories/filipino-food) as your reference.
+            Recall your food intake yesterday. Use <a href="http://www.myfitnesspal.com/en/nutrition-facts-calories/filipino-food" target="_blank">this</a> link as your reference.
+          </p>
+          <p style="text-align: center;">
+            Please check how much calorie you're supposed to take daily by going to <a href="http://www.calorieking.com/interactive-tools/how-many-calories-should-you-eat/?hf=5&hi=5&w=204&a=16&g=F&ref=home">this</a> link.
           </p>
           <br />
           <table class="table table-bordered dietary-table">
@@ -226,7 +280,10 @@
         <div role="tabpanel" class="tab-pane" id="day4">
           <h2 style="text-align: center;">DAY 4</h2>
           <p style="text-align: center;">
-            How much calorie did you take today? Use <a href="http://www.myfitnesspal.com/en/nutrition-facts-calories/filipino-food" target="_blank">this</a> (http://www.myfitnesspal.com/en/nutrition-facts-calories/filipino-food) as your reference.
+            Recall your food intake yesterday. Use <a href="http://www.myfitnesspal.com/en/nutrition-facts-calories/filipino-food" target="_blank">this</a> link as your reference.
+          </p>
+          <p style="text-align: center;">
+            Please check how much calorie you're supposed to take daily by going to <a href="http://www.calorieking.com/interactive-tools/how-many-calories-should-you-eat/?hf=5&hi=5&w=204&a=16&g=F&ref=home">this</a> link.
           </p>
           <br />
           <table class="table table-bordered dietary-table">
@@ -277,7 +334,10 @@
         <div role="tabpanel" class="tab-pane" id="day5">
           <h2 style="text-align: center;">DAY 5</h2>
           <p style="text-align: center;">
-            How much calorie did you take today? Use <a href="http://www.myfitnesspal.com/en/nutrition-facts-calories/filipino-food" target="_blank">this</a> (http://www.myfitnesspal.com/en/nutrition-facts-calories/filipino-food) as your reference.
+            Recall your food intake yesterday. Use <a href="http://www.myfitnesspal.com/en/nutrition-facts-calories/filipino-food" target="_blank">this</a> link as your reference.
+          </p>
+          <p style="text-align: center;">
+            Please check how much calorie you're supposed to take daily by going to <a href="http://www.calorieking.com/interactive-tools/how-many-calories-should-you-eat/?hf=5&hi=5&w=204&a=16&g=F&ref=home">this</a> link.
           </p>
           <br />
           <table class="table table-bordered dietary-table">
@@ -326,7 +386,32 @@
           <br />
         </div>
         <div role="tabpanel" class="tab-pane" id="summary">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          <h2 style="text-align: center;">BMI History</h2>
+          <br />
+          <table class="table table-bordered">
+            <thead class="summary-thead">
+              <tr>
+                <th>Weight</th>
+                <th>Height</th>
+                <th>BMI</th>
+                <th>Z-Score</th>
+                <th>Class</th>
+                <th>Date</th>
+              </tr>
+            </thead>
+            <tbody>
+              <?php foreach($user_summary as $record): ?>
+                <tr class="<?php echo ($record->class == 'Obese' || $record->class == 'Severely Wasted') ? 'danger' : ''; ?><?php echo ($record->class == 'Overweight' || $record->class == 'Wasted') ? 'warning' : ''; ?><?php echo ($record->class == 'Normal') ? 'success' : ''; ?>">
+                  <td><span><?php echo $record->weight; ?></span></td>
+                  <td><span><?php echo $record->height; ?></span></td>
+                  <td><span><?php echo $record->bmi; ?></span></td>
+                  <td><span><?php echo $record->zscore; ?></span></td>
+                  <td><span><?php echo $record->class; ?></span></td>
+                  <td><span><?php echo date('Y-m-d', $record->date_tracked); ?></span></td>
+                </tr>
+              <?php endforeach; ?>
+            </tbody>
+          </table>
         </div>
       </div>
 

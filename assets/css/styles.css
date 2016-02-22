@@ -87,3 +87,7 @@
   display: inline-block;
   vertical-align: middle;
 }
+
+.summary-thead > tr > th {
+  text-align: center;
+}

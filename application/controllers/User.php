@@ -11,6 +11,7 @@ class User extends CI_Controller {
 	public function index() {
 		$personal_info = $this->session->userdata('user');
 		$data['personal_info']	= $personal_info[0];
+		$data['user_summary']	= $this->user->get_records($personal_info[0]->id);
 		$data['page_title']			= 'Profile';
 		$data['page_active']		= 'profile';
 		$this->load->view('includes/head', $data);
