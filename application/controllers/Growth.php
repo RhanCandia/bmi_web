@@ -30,6 +30,8 @@ class Growth extends CI_Controller {
   }
 
   public function boys() {
+    $user = $this->session->userdata('user');
+    $data['personal_info'] = $user[0];
     $data['page_title']		= 'Boys Growth Chart';
 		$data['page_active']	= 'chart_boys';
 		$this->load->view('includes/head', $data);
@@ -39,6 +41,8 @@ class Growth extends CI_Controller {
   }
 
   public function girls() {
+    $user = $this->session->userdata('user');
+    $data['personal_info'] = $user[0];
     $data['page_title']		= 'Girls Growth Chart';
 		$data['page_active']	= 'chart_girls';
 		$this->load->view('includes/head', $data);

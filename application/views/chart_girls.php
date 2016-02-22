@@ -11,13 +11,15 @@
           <th>S(t)</th>
           <th>ACTION</th>
         </tr>
-        <tr>
-          <th><input class="form-control" type="text" name="agemos" id="agemos" placeholder="" value=""></th>
-          <th><input class="form-control" type="text" name="val_l" id="val_l" placeholder="" value=""></th>
-          <th><input class="form-control" type="text" name="val_m" id="val_m" placeholder="" value=""></th>
-          <th><input class="form-control" type="text" name="val_s" id="val_s" placeholder="" value=""></th>
-          <th><button type="button" class="btn btn-primary" id="submit-chart-entry"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></button></th>
-        </tr>
+        <?php if($personal_info->user_group): ?>
+          <tr>
+            <th><input class="form-control" type="text" name="agemos" id="agemos" placeholder="" value=""></th>
+            <th><input class="form-control" type="text" name="val_l" id="val_l" placeholder="" value=""></th>
+            <th><input class="form-control" type="text" name="val_m" id="val_m" placeholder="" value=""></th>
+            <th><input class="form-control" type="text" name="val_s" id="val_s" placeholder="" value=""></th>
+            <th><button type="button" class="btn btn-primary" id="submit-chart-entry"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></button></th>
+          </tr>
+        <?php endif; ?>
       </thead>
       <tbody class="chart-body">
 

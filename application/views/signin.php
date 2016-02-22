@@ -1,6 +1,13 @@
 <div class="container">
 
-  <div class="col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3">
+  <div class="col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3 signin-main">
+
+    <div class="col-sm-12 col-md-12 alert alert-success alert-success-signup">
+      <p>
+        Registration successful! You can now sign in.
+      </p>
+    </div>
+
     <form class="form-horizontal" id="form-signin">
       <div class="form-group">
         <label for="email" class="col-sm-2 col-md-2 control-label">Email</label>

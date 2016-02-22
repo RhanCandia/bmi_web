@@ -1,3 +1,3 @@
-<pre>
-  <?php var_dump($this->session->all_userdata()); ?>
-</pre>
+<div class="container">
+
+</div>

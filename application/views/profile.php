@@ -67,7 +67,7 @@
             Recall your food intake yesterday. Use <a href="http://www.myfitnesspal.com/en/nutrition-facts-calories/filipino-food" target="_blank">this</a> link as your reference.
           </p>
           <p style="text-align: center;">
-            Please check how much calorie you're supposed to take daily by going to <a href="http://www.calorieking.com/interactive-tools/how-many-calories-should-you-eat/?hf=5&hi=5&w=204&a=16&g=F&ref=home">this</a> link.
+            Please check how much calorie you're supposed to take daily by going to <a href="http://www.calorieking.com/interactive-tools/how-many-calories-should-you-eat/?hf=5&hi=5&w=204&a=16&g=F&ref=home" target="_blank">this</a> link.
           </p>
           <br />
           <table class="table table-bordered dietary-table">
@@ -121,7 +121,7 @@
             Recall your food intake yesterday. Use <a href="http://www.myfitnesspal.com/en/nutrition-facts-calories/filipino-food" target="_blank">this</a> link as your reference.
           </p>
           <p style="text-align: center;">
-            Please check how much calorie you're supposed to take daily by going to <a href="http://www.calorieking.com/interactive-tools/how-many-calories-should-you-eat/?hf=5&hi=5&w=204&a=16&g=F&ref=home">this</a> link.
+            Please check how much calorie you're supposed to take daily by going to <a href="http://www.calorieking.com/interactive-tools/how-many-calories-should-you-eat/?hf=5&hi=5&w=204&a=16&g=F&ref=home" target="_blank">this</a> link.
           </p>
           <br />
           <table class="table table-bordered dietary-table">
@@ -175,7 +175,7 @@
             Recall your food intake yesterday. Use <a href="http://www.myfitnesspal.com/en/nutrition-facts-calories/filipino-food" target="_blank">this</a> link as your reference.
           </p>
           <p style="text-align: center;">
-            Please check how much calorie you're supposed to take daily by going to <a href="http://www.calorieking.com/interactive-tools/how-many-calories-should-you-eat/?hf=5&hi=5&w=204&a=16&g=F&ref=home">this</a> link.
+            Please check how much calorie you're supposed to take daily by going to <a href="http://www.calorieking.com/interactive-tools/how-many-calories-should-you-eat/?hf=5&hi=5&w=204&a=16&g=F&ref=home" target="_blank">this</a> link.
           </p>
           <br />
           <table class="table table-bordered dietary-table">
@@ -229,7 +229,7 @@
             Recall your food intake yesterday. Use <a href="http://www.myfitnesspal.com/en/nutrition-facts-calories/filipino-food" target="_blank">this</a> link as your reference.
           </p>
           <p style="text-align: center;">
-            Please check how much calorie you're supposed to take daily by going to <a href="http://www.calorieking.com/interactive-tools/how-many-calories-should-you-eat/?hf=5&hi=5&w=204&a=16&g=F&ref=home">this</a> link.
+            Please check how much calorie you're supposed to take daily by going to <a href="http://www.calorieking.com/interactive-tools/how-many-calories-should-you-eat/?hf=5&hi=5&w=204&a=16&g=F&ref=home" target="_blank">this</a> link.
           </p>
           <br />
           <table class="table table-bordered dietary-table">
@@ -283,7 +283,7 @@
             Recall your food intake yesterday. Use <a href="http://www.myfitnesspal.com/en/nutrition-facts-calories/filipino-food" target="_blank">this</a> link as your reference.
           </p>
           <p style="text-align: center;">
-            Please check how much calorie you're supposed to take daily by going to <a href="http://www.calorieking.com/interactive-tools/how-many-calories-should-you-eat/?hf=5&hi=5&w=204&a=16&g=F&ref=home">this</a> link.
+            Please check how much calorie you're supposed to take daily by going to <a href="http://www.calorieking.com/interactive-tools/how-many-calories-should-you-eat/?hf=5&hi=5&w=204&a=16&g=F&ref=home" target="_blank">this</a> link.
           </p>
           <br />
           <table class="table table-bordered dietary-table">
@@ -337,7 +337,7 @@
             Recall your food intake yesterday. Use <a href="http://www.myfitnesspal.com/en/nutrition-facts-calories/filipino-food" target="_blank">this</a> link as your reference.
           </p>
           <p style="text-align: center;">
-            Please check how much calorie you're supposed to take daily by going to <a href="http://www.calorieking.com/interactive-tools/how-many-calories-should-you-eat/?hf=5&hi=5&w=204&a=16&g=F&ref=home">this</a> link.
+            Please check how much calorie you're supposed to take daily by going to <a href="http://www.calorieking.com/interactive-tools/how-many-calories-should-you-eat/?hf=5&hi=5&w=204&a=16&g=F&ref=home" target="_blank">this</a> link.
           </p>
           <br />
           <table class="table table-bordered dietary-table">

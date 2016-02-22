@@ -64,6 +64,8 @@ class User extends CI_Controller {
 			$response['status']		= 200;
 			$response['code']			= 'REGISTRATION_SUCCESS';
 			$response['message']	= 'Registration successful';
+			$this->session->set_userdata('user', $this->user->get($signup['email']));
+			$this->session->set_userdata('logged', 1);
 		} else {
 			$response['status']		= 400;
 			$response['code']			= 'REGISTRATION_FAILED';

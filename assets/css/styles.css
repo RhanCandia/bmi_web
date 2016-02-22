@@ -91,3 +91,11 @@
 .summary-thead > tr > th {
   text-align: center;
 }
+
+.signin-main {
+  padding-top: 120px;
+}
+
+.alert-success-signup {
+  display: none;
+}

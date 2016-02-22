@@ -51,7 +51,7 @@
       </div>
       <div class="form-group">
         <div class="col-sm-offset-3 col-sm-9 col-md-offset-3 col-md-9">
-          <button type="submit" class="btn btn-default col-sm-4 col-md-4">Sign up</button>
+          <button type="submit" class="btn btn-primary btn-lg col-sm-4 col-md-4">Sign up</button>
         </div>
       </div>
     </form>
@@ -72,7 +72,11 @@ $('#form-signup').submit(function(e){
     processData: false,
     contentType: false,
     success: function(response){
-      console.log(response);
+      if (response.status == 200) {
+        window.location = '<?php echo base_url(); ?>growth/bmi';
+      } else {
+        // error popup
+      }
     }
   });
 });
