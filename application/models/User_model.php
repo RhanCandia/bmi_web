@@ -46,4 +46,48 @@ class User_model extends CI_Model {
     return false;
   }
 
+  function insert_intake($intake) {
+    $this->db->trans_begin();
+    $this->db->insert('tbl_intakes', $intake);
+    if ($this->db->trans_status() === true) {
+      $this->db->trans_commit();
+      return true;
+    }
+    $this->db->trans_rollback();
+    return false;
+  }
+
+  function update_intake($user_id, $day, $data) {
+    $this->db->trans_begin();
+    $this->db->where('user_id', $user_id);
+    $this->db->where('day', $day);
+    $this->db->update('tbl_intakes', $data);
+    if ($this->db->trans_status() === true) {
+      $this->db->trans_commit();
+      return true;
+    }
+    $this->db->trans_rollback();
+    return false;
+  }
+
+  function exists_intake($user_id, $day) {
+    $this->db->where('user_id', $user_id);
+    $this->db->where('day', $day);
+    $result = $this->db->get('tbl_intakes');
+    if ($result->num_rows() > 0) {
+      return true;
+    }
+    return false;
+  }
+
+  function get_intake($user_id, $day) {
+    $this->db->where('user_id', $user_id);
+    $this->db->where('day', $day);
+    $result = $this->db->get('tbl_intakes');
+    if ($result->num_rows() > 0) {
+      return $result->result();
+    }
+    return false;
+  }
+
 }

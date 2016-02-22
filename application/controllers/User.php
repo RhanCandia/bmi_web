@@ -96,4 +96,36 @@ class User extends CI_Controller {
 		redirect(base_url());
 	}
 
+	public function save_intake() {
+		$user   = $this->session->userdata('user');
+		$intake = $this->input->post();
+		$intake['date_tracked'] = time();
+		$intake['user_id'] = $user[0]->id;
+		$response = array();
+		if ($this->user->exists_intake($user[0]->id, $intake['day'])) {
+			if ($this->user->update_intake($user[0]->id, $intake['day'], $intake)) {
+				$response['status']		= 200;
+				$response['code']			= 'UPDATE_SUCCESS';
+				$response['message']	= 'Successfully updated intake';
+			} else {
+				$response['status']		= 400;
+				$response['code']			= 'UPDATE_FAILED';
+				$response['message']	= 'Failed to update intake';
+			}
+		} else {
+			if ($this->user->insert_intake($intake)) {
+				$response['status']		= 200;
+				$response['code']			= 'INSERT_SUCCESS';
+				$response['message']	= 'Successfully inserted intake';
+			} else {
+				$response['status']		= 400;
+				$response['code']			= 'INSERT_FAILED';
+				$response['message']	= 'Failed to insert intake';
+			}
+		}
+		$temp = $this->user->get_intake($user[0]->id, $intake['day']);
+		$response['intake'] = $temp[0];
+		echo json_encode($response);
+	}
+
 }
