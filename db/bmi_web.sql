@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Feb 22, 2016 at 06:14 PM
+-- Generation Time: Feb 22, 2016 at 06:20 PM
 -- Server version: 10.1.9-MariaDB
 -- PHP Version: 5.6.15
 
@@ -155,7 +155,8 @@ INSERT INTO `tbl_user` (`id`, `fname`, `lname`, `level`, `gender`, `email`, `pas
 (4, 'RHANEL', 'CANDIA', 'abcd', 0, 'rhan@rhan.com', '5f4dcc3b5aa765d61d8327deb882cf99', 1009839600, 0, 1456144646),
 (5, 'RHAN', 'CANDIA', 'rhan@rhan.io', 0, 'rhan@rhan.io', '5f4dcc3b5aa765d61d8327deb882cf99', 980982000, 0, 1456145152),
 (6, 'RHAN', 'CANDIA', 'abcd', 0, 'r@c.io', '5f4dcc3b5aa765d61d8327deb882cf99', 981759600, 0, 1456159995),
-(7, 'RHAN', 'CANDIA', 'abcd', 0, 'i@o.io', '5f4dcc3b5aa765d61d8327deb882cf99', 978303600, 0, 1456160736);
+(7, 'RHAN', 'CANDIA', 'abcd', 0, 'i@o.io', '5f4dcc3b5aa765d61d8327deb882cf99', 978303600, 0, 1456160736),
+(8, 'ADMIN', 'ADMIN', 'admin', 0, 'admin@gmail.com', '5f4dcc3b5aa765d61d8327deb882cf99', 697417200, 1, 1456161584);
 
 --
 -- Indexes for dumped tables
@@ -208,7 +209,7 @@ ALTER TABLE `tbl_records`
 -- AUTO_INCREMENT for table `tbl_user`
 --
 ALTER TABLE `tbl_user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
