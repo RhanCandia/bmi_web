@@ -23,3 +23,6 @@ Flow:
   
 Notes:
   BMI Summary and Workout Summary is available from the start.
+
+References:
+  WHO: BMI for Ages 5-19 (http://www.who.int/growthref/who2007_bmi_for_age/en/)
