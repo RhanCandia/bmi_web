@@ -8,6 +8,11 @@ class Home extends CI_Controller {
 	}
 
 	public function index() {
+		if ($this->session->userdata('logged')) {
+			redirect(base_url() . 'growth/bmi');
+		} else {
+			redirect(base_url() . 'user/signin');
+		}
 		$data['page_title']		= 'Home';
 		$data['page_active']	= 'home';
 		$this->load->view('includes/head', $data);

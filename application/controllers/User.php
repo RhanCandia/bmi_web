@@ -6,12 +6,14 @@ class User extends CI_Controller {
 	public function __construct() {
 		parent::__construct();
 		$this->load->model('user_model', 'user');
+		$this->load->model('workout_model', 'workout');
 	}
 
 	public function index() {
 		$personal_info = $this->session->userdata('user');
 		$data['personal_info']	= $personal_info[0];
 		$data['user_summary']	= $this->user->get_records($personal_info[0]->id);
+		$data['user_workouts']	= $this->workout->fetch_record(array('user_id' => $personal_info[0]->id), 'profile');
 		$data['page_title']			= 'Profile';
 		$data['page_active']		= 'profile';
 		$this->load->view('includes/head', $data);
@@ -21,6 +23,9 @@ class User extends CI_Controller {
 	}
 
 	public function signin() {
+		if ($this->session->userdata('logged')) {
+			redirect(base_url() . 'growth/bmi');
+		}
 		$data['page_title']		= 'Sign in';
 		$data['page_active']	= 'signin';
 		$this->load->view('includes/head', $data);
@@ -30,6 +35,9 @@ class User extends CI_Controller {
 	}
 
 	public function signup() {
+		if ($this->session->userdata('logged')) {
+			redirect(base_url() . 'growth/bmi');
+		}
 		$data['page_title']		= 'Sign up';
 		$data['page_active']	= 'signup';
 		$this->load->view('includes/head', $data);

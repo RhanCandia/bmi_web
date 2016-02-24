@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Feb 22, 2016 at 06:20 PM
+-- Generation Time: Feb 24, 2016 at 08:44 AM
 -- Server version: 10.1.9-MariaDB
 -- PHP Version: 5.6.15
 
@@ -123,7 +123,8 @@ INSERT INTO `tbl_records` (`id`, `user_id`, `weight`, `height`, `bmi`, `zscore`,
 (8, 5, 60, 1, 60, 4.3618411779669, 'Obese', 1456145547),
 (9, 5, 60, 1.82, 18.11, -0.75708115751596, 'Normal', 1456159119),
 (10, 7, 60, 1.83, 17.92, -0.89551619240634, 'Normal', 1456160743),
-(11, 7, 60, 2, 15, -2.828224933539, 'Wasted', 1456160746);
+(11, 7, 60, 2, 15, -2.828224933539, 'Wasted', 1456160746),
+(12, 5, 64, 1.82, 19.32, -0.19059254284217, 'Normal', 1456296371);
 
 -- --------------------------------------------------------
 
@@ -158,6 +159,72 @@ INSERT INTO `tbl_user` (`id`, `fname`, `lname`, `level`, `gender`, `email`, `pas
 (7, 'RHAN', 'CANDIA', 'abcd', 0, 'i@o.io', '5f4dcc3b5aa765d61d8327deb882cf99', 978303600, 0, 1456160736),
 (8, 'ADMIN', 'ADMIN', 'admin', 0, 'admin@gmail.com', '5f4dcc3b5aa765d61d8327deb882cf99', 697417200, 1, 1456161584);
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_user_workouts`
+--
+
+CREATE TABLE `tbl_user_workouts` (
+  `id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `workout_id` int(11) NOT NULL,
+  `bpm_before` int(11) NOT NULL,
+  `bpm_after` int(11) DEFAULT NULL,
+  `date_tracked` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_user_workouts`
+--
+
+INSERT INTO `tbl_user_workouts` (`id`, `user_id`, `workout_id`, `bpm_before`, `bpm_after`, `date_tracked`) VALUES
+(1, 5, 3, 132, NULL, 1456291564),
+(2, 5, 3, 132, NULL, 1456291638),
+(3, 5, 3, 132, NULL, 1456291641),
+(4, 5, 3, 132, NULL, 1456291942),
+(5, 5, 3, 132, NULL, 1456291950),
+(6, 5, 3, 130, NULL, 1456291967),
+(7, 5, 5, 120, NULL, 1456292002),
+(8, 5, 3, 132, NULL, 1456294507),
+(9, 5, 5, 120, NULL, 1456294618),
+(10, 5, 3, 132, NULL, 1456294729),
+(11, 5, 4, 132, 120, 1456295332),
+(12, 5, 2, 120, 200, 1456295505),
+(13, 5, 3, 120, 999, 1456295820),
+(14, 5, 6, 100, 1000, 1456296255),
+(15, 5, 8, 100, NULL, 1456298726),
+(16, 5, 8, 100, NULL, 1456298782),
+(17, 5, 7, 100, NULL, 1456299336),
+(18, 5, 7, 80, 200, 1456299364);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_workouts`
+--
+
+CREATE TABLE `tbl_workouts` (
+  `id` int(11) NOT NULL,
+  `title` varchar(64) NOT NULL,
+  `embed` text NOT NULL,
+  `active` tinyint(4) NOT NULL DEFAULT '1',
+  `date_tracked` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_workouts`
+--
+
+INSERT INTO `tbl_workouts` (`id`, `title`, `embed`, `active`, `date_tracked`) VALUES
+(2, 'Workout #1', 'dQw4w9WgXcQ', 0, 1456285566),
+(3, 'Workout #2', 'dQw4w9WgXcQ', 0, 1456285648),
+(4, 'Workout #3', 'dQw4w9WgXcQ', 0, 1456286895),
+(5, 'Workout #4', 'dQw4w9WgXcQ', 0, 1456286955),
+(6, 'Workout #5', 'dQw4w9WgXcQ', 0, 1456286993),
+(7, 'Chandelier - Sia', '2vjPBrBU-TM', 0, 1456298551),
+(8, 'Never Gonna Give You Up - Rick Astley', 'dQw4w9WgXcQ', 0, 1456298609);
+
 --
 -- Indexes for dumped tables
 --
@@ -187,6 +254,18 @@ ALTER TABLE `tbl_user`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `tbl_user_workouts`
+--
+ALTER TABLE `tbl_user_workouts`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `tbl_workouts`
+--
+ALTER TABLE `tbl_workouts`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -204,11 +283,21 @@ ALTER TABLE `tbl_intakes`
 -- AUTO_INCREMENT for table `tbl_records`
 --
 ALTER TABLE `tbl_records`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 --
 -- AUTO_INCREMENT for table `tbl_user`
 --
 ALTER TABLE `tbl_user`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+--
+-- AUTO_INCREMENT for table `tbl_user_workouts`
+--
+ALTER TABLE `tbl_user_workouts`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+--
+-- AUTO_INCREMENT for table `tbl_workouts`
+--
+ALTER TABLE `tbl_workouts`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

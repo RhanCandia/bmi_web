@@ -11,7 +11,8 @@
         <li role="presentation"><a href="#day3" aria-controls="day3" role="tab" data-toggle="tab">DAY 3</a></li>
         <li role="presentation"><a href="#day4" aria-controls="day4" role="tab" data-toggle="tab">DAY 4</a></li>
         <li role="presentation"><a href="#day5" aria-controls="day5" role="tab" data-toggle="tab">DAY 5</a></li>
-        <li role="presentation"><a href="#summary" aria-controls="summary" role="tab" data-toggle="tab">SUMMARY</a></li>
+        <li role="presentation"><a href="#summary" aria-controls="summary" role="tab" data-toggle="tab">BMI SUMMARY</a></li>
+        <li role="presentation"><a href="#workouts" id="toggle-workouts" aria-controls="workouts" role="tab" data-toggle="tab">WORKOUT SUMMARY</a></li>
       </ul>
 
       <!-- Tab panes -->
@@ -400,16 +401,44 @@
               </tr>
             </thead>
             <tbody>
-              <?php foreach($user_summary as $record): ?>
-                <tr class="<?php echo ($record->class == 'Obese' || $record->class == 'Severely Wasted') ? 'danger' : ''; ?><?php echo ($record->class == 'Overweight' || $record->class == 'Wasted') ? 'warning' : ''; ?><?php echo ($record->class == 'Normal') ? 'success' : ''; ?>">
-                  <td><span><?php echo $record->weight; ?></span></td>
-                  <td><span><?php echo $record->height; ?></span></td>
-                  <td><span><?php echo $record->bmi; ?></span></td>
-                  <td><span><?php echo $record->zscore; ?></span></td>
-                  <td><span><?php echo $record->class; ?></span></td>
-                  <td><span><?php echo date('Y-m-d', $record->date_tracked); ?></span></td>
-                </tr>
-              <?php endforeach; ?>
+              <?php if ($user_summary): ?>
+                <?php foreach($user_summary as $record): ?>
+                  <tr class="<?php echo ($record->class == 'Obese' || $record->class == 'Severely Wasted') ? 'danger' : ''; ?><?php echo ($record->class == 'Overweight' || $record->class == 'Wasted') ? 'warning' : ''; ?><?php echo ($record->class == 'Normal') ? 'success' : ''; ?>">
+                    <td><span><?php echo $record->weight; ?></span></td>
+                    <td><span><?php echo $record->height; ?></span></td>
+                    <td><span><?php echo $record->bmi; ?></span></td>
+                    <td><span><?php echo $record->zscore; ?></span></td>
+                    <td><span><?php echo $record->class; ?></span></td>
+                    <td><span><?php echo date('Y-m-d', $record->date_tracked); ?></span></td>
+                  </tr>
+                <?php endforeach; ?>
+              <?php endif; ?>
+            </tbody>
+          </table>
+        </div>
+        <div role="tabpanel" class="tab-pane" id="workouts">
+          <h2 style="text-align: center;">Workout History</h2>
+          <br />
+          <table class="table table-bordered">
+            <thead class="summary-thead">
+              <tr>
+                <th>Workout</th>
+                <th>Heart BPM Before</th>
+                <th>Heart BPM After</th>
+                <th>Date</th>
+              </tr>
+            </thead>
+            <tbody>
+              <?php if ($user_workouts): ?>
+                <?php foreach($user_workouts as $record): ?>
+                  <tr>
+                    <td><span><?php echo $record->title; ?></span></td>
+                    <td><span><?php echo $record->bpm_before; ?></span></td>
+                    <td><span><?php echo $record->bpm_after; ?></span></td>
+                    <td><span><?php echo date('Y-m-d', $record->date_tracked); ?></span></td>
+                  </tr>
+                <?php endforeach; ?>
+              <?php endif; ?>
             </tbody>
           </table>
         </div>
@@ -425,6 +454,9 @@ $(document).ready(function(){
   var ref = '<?php echo $this->input->get('ref'); ?>';
   if (ref == 'calculator') {
     $('#toggle-recall').trigger('click');
+  }
+  if (ref == 'workout') {
+    $('#toggle-workouts').trigger('click');
   }
   update_recall();
   update_day1();

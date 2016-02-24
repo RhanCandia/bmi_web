@@ -8,14 +8,18 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="<?php echo base_url(); ?>">BMI</a>
+      <a class="navbar-brand" href="<?php echo base_url(); ?>">BMI Database</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="main-nav-collapse">
 
       <ul class="nav navbar-nav">
-        <li class="<?php echo ($page_active == 'home') ? 'active' : '' ; ?>"><a href="<?php echo base_url(); ?>">HOME</a></li>
+        <?php if ($this->session->userdata('logged')): ?>
+          <li class="<?php echo ($page_active == 'calculator') ? 'active' : '' ; ?>"><a href="<?php echo base_url(); ?>growth/bmi">BMI CALCULATOR</a></li>
+        <?php endif; ?>
+        <li class="<?php echo ($page_active == 'workout') ? 'active' : '' ; ?>"><a href="<?php echo base_url(); ?>workout">WORKOUT</a></li>
+        <!-- <li class="<?php echo ($page_active == 'home') ? 'active' : '' ; ?>"><a href="<?php echo base_url(); ?>">HOME</a></li> -->
         <li class="dropdown <?php echo (($page_active == 'chart_boys') || $page_active == 'chart_girls') ? 'active' : '' ; ?>">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">GROWTH CHART <span class="caret"></span></a>
           <ul class="dropdown-menu">
@@ -23,7 +27,6 @@
             <li class="<?php echo ($page_active == 'chart_girls') ? 'active' : '' ; ?>"><a href="<?php echo base_url(); ?>growth/girls">GIRLS</a></li>
           </ul>
         </li>
-        <li class="<?php echo ($page_active == 'calculator') ? 'active' : '' ; ?>"><a href="<?php echo base_url(); ?>growth/bmi">BMI CALCULATOR</a></li>
       </ul>
 
       <ul class="nav navbar-nav navbar-right">

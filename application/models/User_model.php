@@ -48,6 +48,7 @@ class User_model extends CI_Model {
 
   function get_records($user_id) {
     $this->db->where('user_id', $user_id);
+    $this->db->order_by('date_tracked', 'DESC');
     $result = $this->db->get('tbl_records');
     if ($result->num_rows() > 0) {
       return $result->result();

@@ -21,6 +21,9 @@ class Growth extends CI_Controller {
   }
 
   public function bmi() {
+    if ( !$this->session->userdata('logged') ) {
+			redirect(base_url() . 'user/signin');
+		}
     $data['page_title']		= 'BMI Calculator';
 		$data['page_active']	= 'calculator';
 		$this->load->view('includes/head', $data);

@@ -9,9 +9,11 @@
           <th>L(t)</th>
           <th>M(t)</th>
           <th>S(t)</th>
-          <th>ACTION</th>
+          <?php if(($personal_info) && ($personal_info->user_group)): ?>
+            <th>ACTION</th>
+          <?php endif; ?>
         </tr>
-        <?php if($personal_info->user_group): ?>
+        <?php if(($personal_info) && ($personal_info->user_group)): ?>
           <tr>
             <th><input class="form-control" type="text" name="agemos" id="agemos" placeholder="" value=""></th>
             <th><input class="form-control" type="text" name="val_l" id="val_l" placeholder="" value=""></th>
@@ -76,7 +78,9 @@ function update_chart(gender) {
           chartHtml += '<td><span>' + response.chart[key].val_l + '</span></td>';
           chartHtml += '<td><span>' + response.chart[key].val_m + '</span></td>';
           chartHtml += '<td><span>' + response.chart[key].val_s + '</span></td>';
-          chartHtml += '<td><button type="button" class="btn btn-primary delete-chart-entry" onclick="remove_entry(this, ' + response.chart[key].id + ')"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button></td>';
+          <?php if(($personal_info) && ($personal_info->user_group)): ?>
+            chartHtml += '<td><button type="button" class="btn btn-primary delete-chart-entry" onclick="remove_entry(this, ' + response.chart[key].id + ')"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button></td>';
+          <?php endif; ?>
           chartHtml += '</tr>';
         }
         $('.chart-body').empty().html(chartHtml);
