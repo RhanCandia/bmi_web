@@ -7,15 +7,15 @@ Setting up:
   
 Initial run:
   1. The admin (admin@gmail.com:password) must configure the Growth Charts.
-      a. For the boys' growth chart, use this as reference: http://www.who.int/growthref/bmifa_boys_5_19years_z.pdf?ua=1
+      1.1. For the boys' growth chart, use this as reference: http://www.who.int/growthref/bmifa_boys_5_19years_z.pdf?ua=1
           Note: You're gonna need the age in months, L, M and S columns. You will encode that in the boys' Growth Chart.
-      a. For the girls' growth chart, use this as reference: http://www.who.int/growthref/bmifa_girls_5_19years_z.pdf?ua=1
+      1.2. For the girls' growth chart, use this as reference: http://www.who.int/growthref/bmifa_girls_5_19years_z.pdf?ua=1
           Note: You're gonna need the Age in months, L, M and S columns. You will encode that in the girls' Growth Chart.
   2. The admin (admin@gmail.com:password) must add workout videos at the workouts section.
-      a. Navigate to /workout. If you are logged in as the admin, you will see a PLUS button at the lower right.
-      b. A form will appear.
-      c. Add a title and the YouTube video link (eg. https://www.youtube.com/watch?v=dQw4w9WgXcQ)
-      d. Save.
+      2.1. Navigate to /workout. If you are logged in as the admin, you will see a PLUS button at the lower right.
+      2.2. A form will appear.
+      2.3. Add a title and the YouTube video link (eg. https://www.youtube.com/watch?v=dQw4w9WgXcQ)
+      2.4. Save.
       Note: To delete a workout video, log in as the admin and click on the video thumbnails.
   
 Flow:
