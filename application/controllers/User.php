@@ -24,7 +24,7 @@ class User extends CI_Controller {
 
 	public function signin() {
 		if ($this->session->userdata('logged')) {
-			redirect(base_url() . 'growth/bmi');
+			redirect(base_url());
 		}
 		$data['page_title']		= 'Sign in';
 		$data['page_active']	= 'signin';
@@ -36,7 +36,7 @@ class User extends CI_Controller {
 
 	public function signup() {
 		if ($this->session->userdata('logged')) {
-			redirect(base_url() . 'growth/bmi');
+			redirect(base_url());
 		}
 		$data['page_title']		= 'Sign up';
 		$data['page_active']	= 'signup';

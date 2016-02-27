@@ -33,6 +33,16 @@ class User_model extends CI_Model {
     return false;
   }
 
+  function get_by_id($id) {
+    $this->db->select('id, fname, lname, email, level, birthdate, gender, user_group');
+    $this->db->where('id', $id);
+    $user = $this->db->get('tbl_user');
+    if ($user->num_rows() > 0) {
+      return $user->result();
+    }
+    return false;
+  }
+
   function add_record($data) {
     $this->db->trans_begin();
     $this->db->insert('tbl_records', $data);

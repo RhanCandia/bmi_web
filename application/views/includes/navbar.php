@@ -8,7 +8,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="<?php echo base_url(); ?>">BMI Database</a>
+      <a class="navbar-brand" href="<?php echo base_url(); ?>">ACRE-WEMTech</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -35,7 +35,11 @@
           $user_info = $this->session->userdata('user');
           $user_info = $user_info[0];
         ?>
-        <li class="<?php echo ($page_active == 'profile') ? 'active' : '' ; ?>"><a href="<?php echo base_url(); ?>user"><?php echo $user_info->fname . ' ' . $user_info->lname; ?></a></li>
+        <?php if($user_info->user_group == 0): ?>
+          <li class="<?php echo ($page_active == 'profile') ? 'active' : '' ; ?>"><a href="<?php echo base_url(); ?>user"><?php echo $user_info->fname . ' ' . $user_info->lname; ?></a></li>
+        <?php else: ?>
+          <li class="<?php echo ($page_active == 'reports') ? 'active' : '' ; ?>"><a href="<?php echo base_url(); ?>reports">REPORTS</a></li>
+        <?php endif; ?>
         <li><a href="<?php echo base_url(); ?>user/signout">SIGN OUT</a></li>
       <?php else: ?>
         <li class="<?php echo ($page_active == 'signin') ? 'active' : '' ; ?>"><a href="<?php echo base_url(); ?>user/signin">SIGN IN</a></li>

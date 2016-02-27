@@ -30,4 +30,4 @@
     <!-- Custom Styles -->
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/styles.css" media="screen" title="no title" charset="utf-8">
   </head>
-  <body unresolved>
+  <body class="<?php echo ($page_active == 'home') ? 'home-container' : '' ; ?>" unresolved>
