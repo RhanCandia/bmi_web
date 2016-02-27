@@ -12,18 +12,18 @@
       <div class="form-group">
         <label for="email" class="col-sm-2 col-md-2 control-label">Email</label>
         <div class="col-sm-10 col-md-10">
-          <input type="email" class="form-control" name="email" id="email" placeholder="Email">
+          <input type="email" class="form-control input-lg" name="email" id="email" placeholder="Email">
         </div>
       </div>
       <div class="form-group">
         <label for="password" class="col-sm-2 col-md-2 control-label">Password</label>
         <div class="col-sm-10 col-md-10">
-          <input type="password" class="form-control" name="password" id="password" placeholder="Password">
+          <input type="password" class="form-control input-lg" name="password" id="password" placeholder="Password">
         </div>
       </div>
       <div class="form-group">
         <div class="col-sm-offset-2 col-sm-10 col-md-offset-2 col-md-10">
-          <button type="submit" class="btn btn-default col-sm-4 col-md-4">Sign in</button>
+          <button type="submit" class="btn btn-primary btn-lg col-sm-4 col-md-4">Sign in</button>
         </div>
       </div>
     </form>
