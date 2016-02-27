@@ -1,3 +1,7 @@
+<?php
+  $user_info = $this->session->userdata('user');
+  $user_info = $user_info[0];
+?>
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -16,7 +20,9 @@
 
       <ul class="nav navbar-nav">
         <?php if ($this->session->userdata('logged')): ?>
-          <li class="<?php echo ($page_active == 'calculator') ? 'active' : '' ; ?>"><a href="<?php echo base_url(); ?>growth/bmi">BMI CALCULATOR</a></li>
+          <?php if($user_info->user_group == 0): ?>
+            <li class="<?php echo ($page_active == 'calculator') ? 'active' : '' ; ?>"><a href="<?php echo base_url(); ?>growth/bmi">BMI CALCULATOR</a></li>
+          <?php endif; ?>
         <?php endif; ?>
         <li class="<?php echo ($page_active == 'workout') ? 'active' : '' ; ?>"><a href="<?php echo base_url(); ?>workout">WORKOUT</a></li>
         <!-- <li class="<?php echo ($page_active == 'home') ? 'active' : '' ; ?>"><a href="<?php echo base_url(); ?>">HOME</a></li> -->
@@ -31,10 +37,6 @@
 
       <ul class="nav navbar-nav navbar-right">
       <?php if ($this->session->userdata('logged')): ?>
-        <?php
-          $user_info = $this->session->userdata('user');
-          $user_info = $user_info[0];
-        ?>
         <?php if($user_info->user_group == 0): ?>
           <li class="<?php echo ($page_active == 'profile') ? 'active' : '' ; ?>"><a href="<?php echo base_url(); ?>user"><?php echo $user_info->fname . ' ' . $user_info->lname; ?></a></li>
         <?php else: ?>
